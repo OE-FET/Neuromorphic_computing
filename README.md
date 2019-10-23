@@ -75,7 +75,7 @@ Stochastic neural networks contain random variables built into the network[24]. 
 
 In order for the neural networks to learn, the synapse weights of the neural network need to be appropriately updated. As learning algorithms in common digital neural networks can be implemented using only multiplication, addition and subtraction operators, it is possible that some digital algorithms could be directly applied using analogue circuits. Here, the most common learning modalities in machine learning are discussed. In particular, time dependent spike algorithms which are not commonly implemented in digital applications as they are more suitable for analogue computers are investigated. 
 
-Unsupervised learning finds commonalities in unlabeled data and updates the model based on the absence or presence of the commonalities in new data. A commonly proposed unsupervised learning algorithm for neuromorphic computers with biological  plausibility is spike time dependent plasticity (STDP)[27]–[33]. The basic STDP algorithm, seen in equation 1, determines that the change of the synapse weight (w_(i,j)) between presynaptic (i) and postsynaptic neurons (j) is dependent on the time difference (t_i-t_j) between the presynaptic and postsynaptic spikes and the learning curve (f)[30]. 
+Unsupervised learning finds commonalities in unlabeled data and updates the model based on the absence or presence of the commonalities in new data. A commonly proposed unsupervised learning algorithm for neuromorphic computers with biological  plausibility is spike time dependent plasticity (STDP)[27]–[33]. The basic STDP algorithm, seen in equation 1, determines that the change of the synapse weight <a href="https://www.codecogs.com/eqnedit.php?latex=w_{i,j}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?w_{i,j}" title="w_{i,j}" /></a> between presynaptic (i) and postsynaptic neurons (j) is dependent on the time difference <a href="https://www.codecogs.com/eqnedit.php?latex=(t_{i}-t_{j})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?(t_{i}-t_{j})" title="(t_{i}-t_{j})" /></a> between the presynaptic and postsynaptic spikes and the learning curve (f)[30]. 
 
 (1)					 <a href="https://www.codecogs.com/eqnedit.php?latex=\Delta&space;w_{i,j}&space;=f(t_{i}-t_{j})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Delta&space;w_{i,j}&space;=f(t_{i}-t_{j})" title="\Delta w_{i,j} =f(t_{i}-t_{j})" /></a>
 
@@ -105,6 +105,9 @@ Memristors are the fourth fundamental passive circuit components where the condu
 
 In comparing the memory properties of analogue EEPROMs and the memrestive synapses capable of using feedback to learn, to the memory properties of antiferromagnetic memories, shown in Table 9, it appears there are certain aspects where AFM memories are superior. Antiferromagnetic memories have high endurance, high fabrication reproducibility, negligible sensitivity to stray fields, and reproducible memory states which suggest that the AFM memories could have unique advantages for specific applications. The details of AFM memories will be discussed in the following section. 
 
+## Methods and Results
+
+Temporarily removed.....
 
 ## Conclusion
 
