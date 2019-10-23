@@ -1,4 +1,4 @@
-# 7	Antiferromagnetics for analogue neuromorphic computing
+# Antiferromagnetics for analogue neuromorphic computing
 This directory contains simulations of antiferromagnetics for analogue neuromorphic computing. A European patent has be filled for this invention (EP19199322.9). The software and other relavent details to the inventoin will be realsed when the legal team has given me the ok.  For now below is an introduction to the topics. 
 
 ## Introduction to analogue neuromorphic computing
@@ -19,17 +19,22 @@ As the literature of neuromorphic computing heavily uses biological terms, it is
 
 There are many types of human biological neurons, however, all neurons have similar properties[10], [11]. Each neuron cell has dendrites receiving information from other neurons[10]. The dendrites collect either excitatory or inhibitory incoming signals, which either respectively increase or reduce the probability that the neuron will produce an output signal. The cell body (soma) contains the nucleus of the neuron and other structures that maintain homeostasis of the cell[10], [11]. Both the soma and the dendrites are used to process the signals from the presynaptic neurons. The membrane potential, the electrochemical potential difference between inside and outside the cell, stores the specific state of the neuron electrochemically. If the membrane potential reaches a set threshold, an output spike signal is sent through the axon to the target neurons and the membrane potential reduces[10]. A single neuron can have thousands of different axon terminals connecting the neuron to different postsynaptic neurons. The interface where the signal from the emitting neuron, known as the presynaptic neuron, is transmitted to the target neuron, known as the postsynaptic neuron, is called the synapse. The information is physically transferred between neurons using neuro-transmitters. The connection strength of the synapse is one of the features that determines the effect of the presynaptic neuron on the postsynaptic neuron[10]. The strength of the synapse depends upon the history of activity between both the presynaptic and postsynaptic neurons. The exact learning mechanisms of the neuron cells are still being researched and depend on the cell type. Known trainable features include membrane time constant, synapse strengths, thresholds and signal conduction delays[10].
 
- 
-##### Figure 7 1: Structure of a neuron cell. Image adapted from Yael Avissar [11].
+ <p align="center">
+    <img width="" height="" src="https://github.com/OE-FET/Neuromorphic_computing/blob/master/imgs/Neuron_bio.png">
+</p>
+##### Figure 1: Structure of a neuron cell. Image adapted from Yael Avissar [11].
 
 ### Artificial neurons
 The artificial digital neuron is described mathematically as an activation function (f) which maps the weighted sum of the discrete input values (x_i) and bias value (b) to a discrete output value (y), i.e. y=f(b+∑_i^n▒〖w_(j,i) x_i 〗). The synapse weights (w_(j,i)) which connect the output of neuron i to the input of neuron j are analogous to the synapse strength between the presynaptic and postsynaptic neurons. The activation function used in applications depends upon the required computational speed and accuracy but an important aspect is maintaining nonlinearity. For example, single layer and deep neural networks with linear activation functions have identical model expressiveness which is not the case for nonlinear activation functions[12]. Common examples of activation functions include signum, sigmoid, heaviside step, rectal linear and hyperbolic tangent functions[8], [13]. 
 
-An artificial analogue neuron can behave identically to a digital neuron during continuous time or to a more biologically plausible neuron model which simulates the membrane potential (v(t)), which is a time dependent quantity that is dependent on the history of the neuron output and input signals from other neurons and is directly related to the output of the neuron (Figure 7 2). 
+An artificial analogue neuron can behave identically to a digital neuron during continuous time or to a more biologically plausible neuron model which simulates the membrane potential (v(t)), which is a time dependent quantity that is dependent on the history of the neuron output and input signals from other neurons and is directly related to the output of the neuron (Figure 2). 
 
 The membrane potential can be mathematically identical to the digital neuron just in continuous time v_j (t)=b+∑_i^n▒〖z_(j,i) x_i 〗(t), or can be more biologically plausible where the membrane potential is defined as a differential equation dependent on the history of the neuron (∂v_j (t))/∂t=g(b,z_(j,1..n) 〖,x〗_(1..n) (t^' ),y_j (t^' ) ). The output from analogue neurons can be a continuous differentiable signal and/or a spike train which propagates to the input of connected neurons via a variable impedance element (z_(j,i)) which simulates the synapse weight. This work focuses on plausible routes to build an artificial variable impedance synapse using AFM and the exact details of the neuron circuitry are not discussed here. Possible neurons include an all CMOS neuron which consists of a leaky current integrator which outputs spike and zero resets the integrator when the integration reaches a set threshold, and Professor Datta Supriyo’s p-bit neuron which stochastically outputs spikes with a probability proportional to the sigmoid of the sum of the input signals from the presynaptic neurons[6], [14]. 
- 
-##### Figure 7 2: Digital and analogue artificial neurons used in artificial neural networks.
+
+ <p align="center">
+    <img width="" height="" src="https://github.com/OE-FET/Neuromorphic_computing/blob/master/imgs/Digital_analogue_Neuron.png">
+</p>
+##### Figure 2: Digital and analogue artificial neurons used in artificial neural networks.
 
 ### Artificial neural networks
 
@@ -37,10 +42,12 @@ Networks of neurons are generated by connecting the output of neurons to the inp
 
 ####Feedforward network 
 
-Feedforward networks contain multiple hidden layers of neurons which connect the input layer of neurons to the output layer of neurons[15]. An example of a feed forward artificial neural network with one hidden layer is seen in Figure 7 3. Deep neural networks are networks with many hidden layers. Deep neural networks have become pervasive because each additional hidden layer enables the network to predict more complex and abstract functions. An example of a single layer of an analogue neural network using a form of variable resistor, memristors, for the artificial synapse is seen in Figure 7 3. Multiple analogue layers could be attached in series to simulate a deep neural network. To compare the computational effectiveness of the suggested analogue neural network architecture to a digital computer, we compare the number of computations required to simulate the current through each of the memristors in the analogue computer. If the computer contains 108 memristors (memristor area of 0.01μm2 on a 1mm2 substrate), the output of each neuron can be discretized into 1ns intervals, and if each instance of current through the memristor is considered a floating point operation, the analogue computer would efficiently perform 1017 flop digital computations which is on the same order as that of the world’s fastest super computer. 
+Feedforward networks contain multiple hidden layers of neurons which connect the input layer of neurons to the output layer of neurons[15]. An example of a feed forward artificial neural network with one hidden layer is seen in Figure 3. Deep neural networks are networks with many hidden layers. Deep neural networks have become pervasive because each additional hidden layer enables the network to predict more complex and abstract functions. An example of a single layer of an analogue neural network using a form of variable resistor, memristors, for the artificial synapse is seen in Figure 3. Multiple analogue layers could be attached in series to simulate a deep neural network. To compare the computational effectiveness of the suggested analogue neural network architecture to a digital computer, we compare the number of computations required to simulate the current through each of the memristors in the analogue computer. If the computer contains 108 memristors (memristor area of 0.01μm2 on a 1mm2 substrate), the output of each neuron can be discretized into 1ns intervals, and if each instance of current through the memristor is considered a floating point operation, the analogue computer would efficiently perform 1017 flop digital computations which is on the same order as that of the world’s fastest super computer. 
 
- 
-##### Figure 7 3: Left) Feed forward multilayer digital neural network and right) single layer analogue neural network. Image adapted from C. Zamarreno-Ramos et al. [16].  
+  <p align="center">
+    <img width="" height="" src="https://github.com/OE-FET/Neuromorphic_computing/blob/master/imgs/feed_forward.png">
+</p>
+##### Figure 3: Left) Feed forward multilayer digital neural network and right) single layer analogue neural network. Image adapted from C. Zamarreno-Ramos et al. [16].  
 
 #### Convolution networks
 
@@ -52,10 +59,12 @@ Recurrent neural networks have neurons where the present state of the neuron is 
 
 #### Reservoir network
 
-Reservoir neural networks contain a network of fixed interconnected neurons with either random or fixed synapse weights, called a reservoir, and an output layer to interpret the reservoir by sampling a subset of the reservoir neurons (Figure 7 4)[19]. Similar to recurrent networks, reservoir networks are suitable for temporal tasks. Reservoir networks are particularly interesting for analogue neuromorphic applications as learning does not occur by modification of the synapse weights in the reservoir and reservoir networks are mathematically equivalent to a collection of non-linear oscillators(Figure 7 4)[19]. These properties allow reservoir ANNs to be simulated in unintuitive systems such as electrical nanoscale spin-torque oscillators, optical m-z modulators, spatio-temporal photonic systems and physical buckets of water[19]–[22]. 
+Reservoir neural networks contain a network of fixed interconnected neurons with either random or fixed synapse weights, called a reservoir, and an output layer to interpret the reservoir by sampling a subset of the reservoir neurons (Figure 4)[19]. Similar to recurrent networks, reservoir networks are suitable for temporal tasks. Reservoir networks are particularly interesting for analogue neuromorphic applications as learning does not occur by modification of the synapse weights in the reservoir and reservoir networks are mathematically equivalent to a collection of non-linear oscillators(Figure 4)[19]. These properties allow reservoir ANNs to be simulated in unintuitive systems such as electrical nanoscale spin-torque oscillators, optical m-z modulators, spatio-temporal photonic systems and physical buckets of water[19]–[22]. 
 
- 
-##### Figure 7 4: Left) Reservoir network using artificial neurons. Right) Schematic description of a nonlinear computing network. The N inertial masses (circles) arranged in a chain are coupled to neighbors by linear springs and to a substrate by a linear or non-linear spring, with damping. A harmonic forcing, with amplitude possibly modulated by coupling to the input signal u(t), is imposed on the masses. Image adapted from C. Coulombe et al. [23]. 
+  <p align="center">
+    <img width="" height="" src="https://github.com/OE-FET/Neuromorphic_computing/blob/master/imgs/Reservoir.png">
+</p>
+##### Figure 4: Left) Reservoir network using artificial neurons. Right) Schematic description of a nonlinear computing network. The N inertial masses (circles) arranged in a chain are coupled to neighbors by linear springs and to a substrate by a linear or non-linear spring, with damping. A harmonic forcing, with amplitude possibly modulated by coupling to the input signal u(t), is imposed on the masses. Image adapted from C. Coulombe et al. [23]. 
 
 #### Bayesian neural networks 
 
@@ -65,9 +74,9 @@ Stochastic neural networks contain random variables built into the network[24]. 
 
 In order for the neural networks to learn, the synapse weights of the neural network need to be appropriately updated. As learning algorithms in common digital neural networks can be implemented using only multiplication, addition and subtraction operators, it is possible that some digital algorithms could be directly applied using analogue circuits. Here, the most common learning modalities in machine learning are discussed. In particular, time dependent spike algorithms which are not commonly implemented in digital applications as they are more suitable for analogue computers are investigated. 
 
-Unsupervised learning finds commonalities in unlabeled data and updates the model based on the absence or presence of the commonalities in new data. A commonly proposed unsupervised learning algorithm for neuromorphic computers with biological  plausibility is spike time dependent plasticity (STDP)[27]–[33]. The basic STDP algorithm, seen in equation 7.1, determines that the change of the synapse weight (w_(i,j)) between presynaptic (i) and postsynaptic neurons (j) is dependent on the time difference (t_i-t_j) between the presynaptic and postsynaptic spikes and the learning curve (f)[30]. 
+Unsupervised learning finds commonalities in unlabeled data and updates the model based on the absence or presence of the commonalities in new data. A commonly proposed unsupervised learning algorithm for neuromorphic computers with biological  plausibility is spike time dependent plasticity (STDP)[27]–[33]. The basic STDP algorithm, seen in equation 1, determines that the change of the synapse weight (w_(i,j)) between presynaptic (i) and postsynaptic neurons (j) is dependent on the time difference (t_i-t_j) between the presynaptic and postsynaptic spikes and the learning curve (f)[30]. 
 
-(7.1)					 〖∆w〗_(i,j)= f(t_i-t_j)
+(1)					 〖∆w〗_(i,j)= f(t_i-t_j)
 
 The common implementation of the STDP algorithm in neuromorphic chips occurs because memristors and specific presynaptic and postsynaptic waveforms are capable of implementing STDP. The basic implementation of STDP using memristors, using a similar architecture as that in Figure 7 3, can be applied only to a single layer of neurons or used to train readouts for reservoir networks. However, simple STDP memristor networks are not capable of performing XOR classification[31], [34]. In this work it is demonstrated that STDP learning is possible for AFM based synapses. More complex STDP algorithms will be reviewed in the next sections on supervised and reinforcement learning. 
 
