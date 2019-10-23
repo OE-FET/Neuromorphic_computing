@@ -22,19 +22,20 @@ There are many types of human biological neurons, however, all neurons have simi
  <p align="center">
     <img width="" height="" src="https://github.com/OE-FET/Neuromorphic_computing/blob/master/imgs/Neuron_bio.png">
 </p>
-#### Figure 1: Structure of a neuron cell. Image adapted from Yael Avissar [11].
+
+Figure 1: Structure of a neuron cell. Image adapted from Yael Avissar [11].
 
 ### Artificial neurons
-The artificial digital neuron is described mathematically as an activation function (f) which maps the weighted sum of the discrete input values (x_i) and bias value (b) to a discrete output value (y), i.e. y=f(b+∑_i^n▒〖w_(j,i) x_i 〗). The synapse weights (w_(j,i)) which connect the output of neuron i to the input of neuron j are analogous to the synapse strength between the presynaptic and postsynaptic neurons. The activation function used in applications depends upon the required computational speed and accuracy but an important aspect is maintaining nonlinearity. For example, single layer and deep neural networks with linear activation functions have identical model expressiveness which is not the case for nonlinear activation functions[12]. Common examples of activation functions include signum, sigmoid, heaviside step, rectal linear and hyperbolic tangent functions[8], [13]. 
+The artificial digital neuron is described mathematically as an activation function (f) which maps the weighted sum of the discrete input values (x_i) and bias value (b) to a discrete output value (y), i.e. y = f(b+\sum_{i}^{n}w_{j,i}x_{i}). The synapse weights (w_{j,i}) which connect the output of neuron i to the input of neuron j are analogous to the synapse strength between the presynaptic and postsynaptic neurons. The activation function used in applications depends upon the required computational speed and accuracy but an important aspect is maintaining nonlinearity. For example, single layer and deep neural networks with linear activation functions have identical model expressiveness which is not the case for nonlinear activation functions[12]. Common examples of activation functions include signum, sigmoid, heaviside step, rectal linear and hyperbolic tangent functions[8], [13]. 
 
 An artificial analogue neuron can behave identically to a digital neuron during continuous time or to a more biologically plausible neuron model which simulates the membrane potential (v(t)), which is a time dependent quantity that is dependent on the history of the neuron output and input signals from other neurons and is directly related to the output of the neuron (Figure 2). 
 
-The membrane potential can be mathematically identical to the digital neuron just in continuous time v_j (t)=b+∑_i^n▒〖z_(j,i) x_i 〗(t), or can be more biologically plausible where the membrane potential is defined as a differential equation dependent on the history of the neuron (∂v_j (t))/∂t=g(b,z_(j,1..n) 〖,x〗_(1..n) (t^' ),y_j (t^' ) ). The output from analogue neurons can be a continuous differentiable signal and/or a spike train which propagates to the input of connected neurons via a variable impedance element (z_(j,i)) which simulates the synapse weight. This work focuses on plausible routes to build an artificial variable impedance synapse using AFM and the exact details of the neuron circuitry are not discussed here. Possible neurons include an all CMOS neuron which consists of a leaky current integrator which outputs spike and zero resets the integrator when the integration reaches a set threshold, and Professor Datta Supriyo’s p-bit neuron which stochastically outputs spikes with a probability proportional to the sigmoid of the sum of the input signals from the presynaptic neurons[6], [14]. 
+The membrane potential can be mathematically identical to the digital neuron just in continuous time v_{j}(t)=b+∑_{i}^{n{z_{j,i}x_{i}(t), or can be more biologically plausible where the membrane potential is defined as a differential equation dependent on the history of the neuron (∂v_j (t))/∂t=g(b,z_(j,1..n) 〖,x〗_(1..n) (t^' ),y_j (t^' ) ). The output from analogue neurons can be a continuous differentiable signal and/or a spike train which propagates to the input of connected neurons via a variable impedance element (z_(j,i)) which simulates the synapse weight. This work focuses on plausible routes to build an artificial variable impedance synapse using AFM and the exact details of the neuron circuitry are not discussed here. Possible neurons include an all CMOS neuron which consists of a leaky current integrator which outputs spike and zero resets the integrator when the integration reaches a set threshold, and Professor Datta Supriyo’s p-bit neuron which stochastically outputs spikes with a probability proportional to the sigmoid of the sum of the input signals from the presynaptic neurons[6], [14]. 
 
  <p align="center">
     <img width="" height="" src="https://github.com/OE-FET/Neuromorphic_computing/blob/master/imgs/Digital_analogue_Neuron.png">
 </p>
-#### Figure 2: Digital and analogue artificial neurons used in artificial neural networks.
+Figure 2: Digital and analogue artificial neurons used in artificial neural networks.
 
 ### Artificial neural networks
 
@@ -47,7 +48,7 @@ Feedforward networks contain multiple hidden layers of neurons which connect the
   <p align="center">
     <img width="" height="" src="https://github.com/OE-FET/Neuromorphic_computing/blob/master/imgs/feed_forward.png">
 </p>
-#### Figure 3: Left) Feed forward multilayer digital neural network and right) single layer analogue neural network. Image adapted from C. Zamarreno-Ramos et al. [16].  
+Figure 3: Left) Feed forward multilayer digital neural network and right) single layer analogue neural network. Image adapted from C. Zamarreno-Ramos et al. [16].  
 
 #### Convolution networks
 
@@ -64,7 +65,7 @@ Reservoir neural networks contain a network of fixed interconnected neurons with
   <p align="center">
     <img width="" height="" src="https://github.com/OE-FET/Neuromorphic_computing/blob/master/imgs/Reservoir.png">
 </p>
-#### Figure 4: Left) Reservoir network using artificial neurons. Right) Schematic description of a nonlinear computing network. The N inertial masses (circles) arranged in a chain are coupled to neighbors by linear springs and to a substrate by a linear or non-linear spring, with damping. A harmonic forcing, with amplitude possibly modulated by coupling to the input signal u(t), is imposed on the masses. Image adapted from C. Coulombe et al. [23]. 
+Figure 4: Left) Reservoir network using artificial neurons. Right) Schematic description of a nonlinear computing network. The N inertial masses (circles) arranged in a chain are coupled to neighbors by linear springs and to a substrate by a linear or non-linear spring, with damping. A harmonic forcing, with amplitude possibly modulated by coupling to the input signal u(t), is imposed on the masses. Image adapted from C. Coulombe et al. [23]. 
 
 #### Bayesian neural networks 
 
