@@ -1,5 +1,5 @@
 # Antiferromagnetics for analogue neuromorphic computing
-This directory contains simulations of antiferromagnetics for analogue neuromorphic computing. A European patent has be filled for this invention (EP19199322.9). The software and other relavent details to the inventoin will be realsed when the legal team has given me the ok.  For now below is an introduction to the topics. 
+This directory contains simulations of antiferromagnetics for analogue neuromorphic computing. A European patent has be filled for this invention (EP19199322.9). The software and other relevant details to the invention will be released when the legal team has given me the ok. For now below is an introduction to the topics.
 
 ## Introduction to analogue neuromorphic computing
 To the best of the author’s knowledge this is the first report investigating routes to implement neuromorphic computing with AFM counters. 
